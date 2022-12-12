@@ -1,0 +1,444 @@
+Variables	
+	name = "Darshan"
+	gender = 'M';
+	cgpa = 10.0
+	age = 77
+
+Rules to define identifier
+1. It can containts alphabets (Lower case & Upper case), Digits &  _(Underscore).
+2. It should not start with digit
+3. It should not be keywords
+4. Case sensitive
+5. Length may be anything
+
+Operators	
+	Arithmetic
+		+
+		-
+		*
+		/
+		%
+#include <stdio.h>
+
+#include <math.h>
+
+int main()
+{
+
+    printf("%f", fmod(10.0,6));
+
+
+    return 0;
+
+}
+
+	Relational
+		<
+		<=
+		>
+		>=
+		==
+		!=
+
+	Logical
+		&&	AND
+		||	OR
+
+#include <stdio.h>
+
+int main()
+{
+
+    // CTRL + / --> Toggle command button
+
+    int a = 10, b = 20, c = 30;
+
+    int d = a > b && a > c;
+
+    printf("%d", d);
+
+        
+    // printf("%d",10>=20);
+
+
+    return 0;
+
+}
+
+
+
+		!	NOT
+
+#include <stdio.h>
+
+int main()
+{
+
+    int a = 0;
+
+    int b = !a;
+
+    printf("%d", b);
+
+
+    return 0;
+
+}
+
+	Increment/Decrement
+		++/--
+
+	a++	==> a = a + 1
+	--a	==> a = a - 1
+
+
+#include <stdio.h>
+
+int main()
+{
+
+    int a = 5, b, c;
+
+    b = ++a;
+
+    c = a++ + ++b;
+
+    printf("%d %d %d",a,b,c);
+
+    return 0;
+
+}
+
+Ternary or conditional
+	?:
+	Syntax:
+		<condition>?<true>:<false>
+
+	a = 10
+	b = 20
+	
+	max = a > b ? a : b
+
+
+
+
+#include <stdio.h>
+
+int main()
+{
+    int x = 10;
+    x *= 10 - 20;   // x = x * 10 - 20
+    printf("%d", x);
+
+    return 0;
+}
+
+
+
+#include <stdio.h>
+
+int main()
+{
+    int x;
+    10,20,30;
+    
+    x = (10,20,30);
+    printf("%d", x);
+
+    return 0;
+}
+
+
+
+/*
+Structure of C Program
+<documentation_section>
+//Program to calculate simple reinterpret_cast
+<preprocessor_directives>
+#include 
+<macro_definition>
+#define
+<global_declaration>
+int total = 61;
+
+int main() { //Starting point of your application
+    <local_declaration>
+    <executable_statements>
+    
+    return 0;
+}
+*/
+
+
+
+//Program to calculate Simple interest
+
+#include <stdio.h>
+
+int main(){
+    int principle;
+    float time, rate_of_interest, simple_interest;
+    printf("Principle Amount : ");
+    scanf("%d", &principle) ;// %d or %i --> signed int or int
+    printf("Rate of Interest : ");
+    scanf("%f", &rate_of_interest);
+    printf("Years            : ");
+    scanf("%f", &time);
+    
+    simple_interest = principle * time * rate_of_interest / 100;
+    printf("Simple Interest : %.2f", simple_interest);
+    
+    
+    return 0;    
+}
+
+
+//Program to calculate Compound interest
+
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+    int principle;
+    float time, rate_of_interest, compound_interest;
+    printf("Principle Amount : ");
+    scanf("%d", &principle) ;// %d or %i --> signed int or int
+    printf("Rate of Interest : ");
+    scanf("%f", &rate_of_interest);
+    printf("Years            : ");
+    scanf("%f", &time);
+    
+    compound_interest = principle * pow(1+ rate_of_interest / 100, time)-principle;
+    printf("Compound Interest : %.2f", compound_interest);
+    
+    
+    return 0;    
+}
+
+
+
+
+
+//Program to find sium and average of 5 integers
+
+#include <stdio.h>
+
+
+int main(){
+    int a,b,c,d,e, sum;
+    float avg;
+    
+    scanf("%d %d %d %d %d", &a,&b,&c, &d, &e);
+    sum = a + b + c + d + e;
+    avg = sum / 5.0; // avg = (float)sum/5;
+    printf("Sum : %d\n", sum);
+    printf("Average : %g", avg);
+    
+    
+    return 0;    
+}
+
+
+
+
+//Program to find area of scalene triangle
+
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+    float a,b,c, area, s;
+    
+    scanf("%f %f %f", &a, &b, &c);
+    
+    s = (a + b + c) / 2;
+    area = sqrt(s * (s-a) * (s-b) * (s-c));
+    
+    printf("Area : %.2f",area);
+    
+    return 0;    
+}
+
+
+
+
+//Program to check whether the given number is multiples of 7 or not
+
+#include <stdio.h>
+
+int main(){
+    int x;
+    scanf("%d", &x);
+    
+    printf (x % 7 == 0 ? "Multiples of 7": "Not Multiples of 7");
+    
+    return 0;    
+}
+
+	
+
+
+
+Control Structures
+	1. Sequential
+	2. Selective
+			if
+				Simple if
+				if (<condition>){
+					<statements>
+				}
+				if...else 
+				if (<condition>){
+						<statements>
+				}
+				else{
+					<statements>
+				}
+				Nested if
+				 if (<condition>){
+					<statements>
+					if (<condition>){
+						<statements>	
+					}
+					else {
+						<statements>
+					}
+				 }
+				 else{
+					<statments>
+				  }
+
+				else if ... syntax:
+
+					if (<condition)>{
+						<statements>
+					}
+					else if (<condition>){
+						<statements>
+					}
+					else {
+						<statements>
+					}
+
+
+
+			switch
+
+	3. Iterative or Looping
+
+
+
+
+//Bill Calculator
+#include <stdio.h>
+
+int main()
+{
+   char product_name[20];
+   int quantity;
+   float price, bill_amount, discount=0, net_amount;
+   printf("Product Name : ");
+   scanf("%s", product_name);
+   printf("Quantity : ");
+   scanf("%d", &quantity);
+   printf("Price : ");
+   scanf("%f", &price);
+   
+   bill_amount = quantity * price;
+   
+   if (bill_amount >= 50000)
+        discount = bill_amount * 20 / 100; // bill_amount * 0.2;
+    else
+        discount = bill_amount * 10 / 100; // bill_amount * 0.1;
+    net_amount = bill_amount - discount;
+    
+    printf("Bill Amount : %10.2f\n", bill_amount);
+    printf("Discount(-) : %10.2f\n", discount);
+    printf("            ============\n");
+    printf("              %10.2f\n", net_amount);
+    printf("            ============\n");    
+    return 0;
+}
+/*
+    Bill Amount : 10000.00
+    Discount(-) :  1500.00
+                ==========
+                   8500.00
+                ==========
+
+    ----------
+      10000.00
+       1500.00
+        200.00
+
+
+
+*/
+
+
+//Program to check whether the number is divisable by 2 & 3
+#include <stdio.h>
+
+int main(){
+    int x;
+    scanf("%d", &x);
+    if (x%2 == 0){
+        if (x % 3 == 0){
+            printf("%d is divisable by 2 & 3", x);
+        }
+        else{
+            printf("%d is divisable by 2 not 3", x);
+        }
+    }
+    else if (x % 3 == 0){
+        printf("%d is divisable by 3 not 2", x);
+    }
+    else{
+        printf("%d is not divisable by 2 & 3", x);
+    }
+    return 0;
+}
+
+
+//Program to check whether the number is divisable by 2 & 3
+#include <stdio.h>
+
+int main(){
+    float score;
+    scanf("%f", &score);
+    if ( score>=0 && score <=10){
+        if (score>= 9)
+            printf("Grade \"O\"");
+        else if (score>=8)
+            printf("Grade \"A\"");
+        else if (score>=7)
+            printf("Grade \"B\"");
+        else if (score>=6)
+            printf("Grade \"C\"");
+        else if (score>=5)
+            printf("Grade \"D\"");
+        else 
+            printf("\"NO\" Grade ");            
+    }
+    else
+        printf("Invalid Score!");
+
+    return 0;
+}
+
+/*
+    Grading System
+    >= 9 ==> Grade "O"
+    8 to 8.99 ==> Grade "A" printf("Grade \"A\"");
+    7 to 7.99 ==> Grade "B"
+    6 to 6.99 ==> Grade "C"
+    5 to 5.99 ==> Grade "D"
+    < 5 ==>       "No" Grade
+*/
+
+
+
+
+
+
+

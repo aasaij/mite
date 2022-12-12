@@ -1,0 +1,15 @@
+package controlstructures;
+
+public class XPattern {
+
+	public static void main(String[] args) {
+		String str = new java.util.Scanner(System.in).nextLine();
+		int len = str.length();
+		for (int i = 1; i<=len; i++) {
+			String format ="%"+i+"c";
+			System.out.println("".format(format, str.charAt(i-1)));
+		}
+
+	}
+
+}

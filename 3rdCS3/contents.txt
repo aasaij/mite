@@ -1,0 +1,24 @@
+operators
+	Arithmetic
+	+
+	-
+	*
+	/
+	%
+	Relational
+	>
+	>=
+	<
+	<=
+	==
+	!=
+	Logical 
+	&&
+	||
+	!
+	Increment/Decrement
+	++/--
+	Conditional or Ternary
+	?:
+		Syntax:
+			<exprL>?<true>:><false>

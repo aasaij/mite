@@ -1,0 +1,81 @@
+package switchdemo;
+public class DayOfDate {
+	public static void main(String[] args) {
+		String sdate = new java.util.Scanner(System.in).nextLine();
+		String str[] = sdate.split("/");
+		int dd = Integer.parseInt(str[0]);
+		int mm = Integer.parseInt(str[1]);
+		int yy = Integer.parseInt(str[2]);
+		int D, C, f;
+		if (mm == 1 || mm == 2) {
+			mm+=10;
+			yy--;
+		}
+		else 
+			mm-=2;
+		D = yy % 100;
+		C = yy / 100;
+		
+		f = (dd + (13*mm-1)/5 + D + D/4 + C/4 - 2*C)%7;
+		if (f < 0)
+			f+=7;
+		switch(f) {
+		case 0: System.out.println("Sunday"); break;
+		case 1: System.out.println("Monday"); break;
+		case 2: System.out.println("Tuesday"); break;
+		case 3: System.out.println("Wednesday"); break;
+		case 4: System.out.println("Thursday"); break;
+		case 5: System.out.println("Friday"); break;
+		case 6: System.out.println("Saturday"); break;
+		}
+		
+		
+
+	}
+
+}
+
+
+
+
+package switchdemo;
+
+public class PrimeOrNot {
+
+	public static void main(String[] args) {
+		int x = new java.util.Scanner(System.in).nextInt();
+		if ( x > 0) {
+			if ( x == 1)
+				System.out.println("Neither prime nor composite");
+			else if (x > 3 && (x % 2 == 0 || x % 3 == 0))
+				System.out.println("Not Prime");
+			else {
+				for (int f = 5 ; f*f<=x; f+=6)
+					if (x % f == 0 || x % ( f + 2)==0) {
+						System.out.println("Not Prime");
+						return; //System.exit(0);
+					}
+				System.out.println("Prime");
+			}
+		}
+	}
+
+}
+
+
+Sieve Algorithm
+
+All prime numbers are either 6N+1 or 6N-1 exept 2 & 3.
+
+11	6 x 2 - 1
+7	6 x 1 + 1
+17	6 x 3 - 1
+
+but 
+All 6N+1 and 6N-1 are not prime numbers
+
+25	6 x 4 + 1
+35	6 x 6 - 1
+
+
+

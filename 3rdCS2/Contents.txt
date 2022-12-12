@@ -1,0 +1,266 @@
+-10
+"Leston"
+"leston123@gmail.com"
+'F'
+77
+9.9
+
+Numeric		Non-numeric
+
+Integer		Character
+			'7', 'f', 'M'
+	
+Real  (float)	String
+					"testing@123"
+
+Variable
+	It is one kind of  identifier. 
+
+Identifier
+	User defined words
+Rules to define an identifier
+1. It can contain alphabets (lower or upper), digits and underscore(-)
+
+2. It should not start with digit
+
+3. It should not be keyword
+
+4. Strickly case sensitive
+
+5. Length may be anything
+
+Operators
+	Arithmetic
+	+,-, *,/, %
+	Relational
+	>,>=, <,<=, ==, !=
+	Logical
+	&& - AND
+	|| - OR
+	! - NOT
+
+
+#include <stdio.h>
+
+#include <math.h>
+
+int main()
+{
+
+        int x = 0,y;
+
+//   printf("%i", 123); // Decimal integer  %i -> used to print signed decimal integer
+
+//   printf("%i", 017); //Octal integer
+
+    // printf("%i", 0x17); //Hexadecimal integer
+
+    // printf("%i", 0b10100);
+ //Binary integer
+
+    // printf("%g", 10.0/8);
+
+    // printf("%E", 12.5e7);
+
+    // printf("%d", 12 % 14);
+
+    // printf("%f", fmod(12.5, 2));
+
+// printf("%d", 10<=20);
+
+    // printf("%d", 10<=20 && 20 >= 30);
+
+    y = !x;
+
+    printf("%d", y);
+
+    
+    return 0;
+
+}
+
+
+
+
+Iterative Control Structure
+
+for
+	Syntax:
+		for (<initial_value>;<condition>; <updation>){
+		<statements>
+	}
+
+
+ 
+
+
+#include <stdio.h>
+
+int main(){
+    int n;
+    scanf("%d", &n);
+    
+    for (int i = 1;i<=n;i++)
+        printf("%d ", i);
+
+    return 0;
+}
+
+
+// for (<initial_value>;<condition>;<updation>){
+//     <statements>
+// }
+
+// example
+
+
+
+#include <stdio.h>
+
+int main(){
+    int n;
+    scanf("%d", &n);
+    
+    for (int i = 1;i<=n;i+=2){
+        printf("%d ", i);
+    }
+
+    return 0;
+}
+
+
+// for (<initial_value>;<condition>;<updation>){
+//     <statements>
+// }
+
+// example
+
+
+
+#include <stdio.h>
+
+int main(){
+    int n;
+    scanf("%d", &n);
+    
+    for (int i = n%2?n:n-1;i>=1;i-=2){
+        printf("%d ", i);
+    }
+
+    return 0;
+}
+
+
+// for (<initial_value>;<condition>;<updation>){
+//     <statements>
+// }
+
+// example
+
+
+
+
+#include <stdio.h>
+#include <math.h>
+//Program to check whether the given number is prime or not
+int main(){
+    int x;
+    scanf("%d", &x);
+    if (x > 0){
+        if ( x == 1)
+            printf("Neither prime nor composite");
+        else{
+            for(int f = 2; f<=sqrt(x);f++){
+                if ( x % f ==0){ // checking whether f is factor of x
+                    printf("Not Prime");
+                    return 0;//Terminate the program (exit(0))
+                    
+                }
+            }
+            printf("Prime");
+        }
+    }
+    return 0;
+}
+
+/*
+    25  ==> 5
+    49  ==> 7
+    121 ==> 11
+    
+    169 ==> 13
+    
+    All prime numbers are either 6N+1 or 6N-1 except 2 & 3
+    
+    29  6 x 5 - 1
+    13  6 x 2 + 1
+    11  6 x 2 - 1
+    
+    but all 6N+1 and 6N-1 are not prime numbers
+    25  6 x 4 + 1
+    35  6 x 6 - 1
+    
+    
+    
+    
+    
+    
+    
+*/
+
+
+
+#include <stdio.h>
+
+//Program to check whether the given number is prime or not
+int main(){
+    int x;
+    scanf("%d", &x);
+    if (x > 0){
+        if (x == 1)
+            printf("Neither prime nor composite");
+        else if ( x > 3 && (x % 2 == 0 || x % 3 == 0))
+            printf("Not Prime");
+        else{
+            for (int f = 5; f*f<=x;f+=6){
+                if (x % f == 0 || x % (f+2)==0){
+                    printf("Not Prime");
+                    return 0;
+                }
+            }//end for
+            printf("Prime");
+        }
+        
+    }else
+        printf("Invalid number!");
+    return 0;
+}
+
+/*
+    25  ==> 5
+    49  ==> 7
+    121 ==> 11
+    
+    169 ==> 13
+    
+    All prime numbers are either 6N+1 or 6N-1 except 2 & 3
+    
+    29  6 x 5 - 1
+    13  6 x 2 + 1
+    11  6 x 2 - 1
+    
+    but all 6N+1 and 6N-1 are not prime numbers
+    25  6 x 4 + 1
+    35  6 x 6 - 1
+    
+    
+    
+ 2 3    5      11    17    23  29 31       37  41 43  
+ Twin prime numbers
+    the difference between two prime numbers should be 2
+    
+    
+    
+*/
+while
+do.. while
